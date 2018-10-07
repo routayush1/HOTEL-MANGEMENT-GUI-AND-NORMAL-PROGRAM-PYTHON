@@ -7,6 +7,10 @@
 import os
 import pickle
 import sys
+import os
+from subprocess import call
+
+import sys
 
 try:
     from Tkinter import *
@@ -32,7 +36,17 @@ def file_save():
     a=save(NAME_PRO,ADDRESS_PRO,MOBILE_NO_PRO,ROOM_NO_PRO,PRICE_PRO)
     pickle.dump(a,f,protocol=2)
     f.close()
+    listq=[str(NAME_PRO),str(ADDRESS_PRO),str(MOBILE_NO_PRO),str(ROOM_NO_PRO),str(PRICE_PRO)]
+    myVars = {'A':NAME_PRO,"B":ADDRESS_PRO,"C":MOBILE_NO_PRO,"D":ROOM_NO_PRO,"E":PRICE_PRO }
+
+    fo=open("recipt.txt","w+")
+    for h in range(0,5):
+        fo.write(listq[h]+"\r\n")
+    fo.close()
+    call(["python", "recipt.py"])
     restart_program()
+
+
 
 
 
@@ -59,7 +73,7 @@ class save:
         self.mobile_no=MOBILE_NO_PRO
         self.room_no=ROOM_NO_PRO
         self.price=PRICE_PRO
-        print(self.name,self.address,self.mobile_no,self.room_no,self.price)
+
 
 
 class HOTEL_MANGMENT_checkin:
@@ -79,9 +93,9 @@ class HOTEL_MANGMENT_checkin:
 
         def chk_name():
             while True:
-                print("\n")
+
                 self.k = str(self.name.get())
-                print(self.k)
+
                 a = self.k.isdigit()
                 if len(self.k) != 0 and a != True:
                     self.NAME=self.k
@@ -95,7 +109,7 @@ class HOTEL_MANGMENT_checkin:
         def chk_add():
             while True:
                 self.g = str(self.addr.get())
-                print(self.g)
+
 
                 ak = self.g.isdigit()
                 if len(self.g)!= 0 and ak!=True:
@@ -109,7 +123,7 @@ class HOTEL_MANGMENT_checkin:
 
         def chk_mo():
             while True:
-                print("\n")
+
                 self.h = str(self.mobile.get())
                 if self.h.isdigit() == True and len(self.h) != 0 and len(self.h) == 10:
                     self.MOBILE = self.h
@@ -121,9 +135,9 @@ class HOTEL_MANGMENT_checkin:
 
         def chk_day():
             while True:
-                print("\n")
+
                 self.l = str(self.days.get())
-                print(self.l)
+
                 if self.l.isdigit() == True and len(self.l) != 0:
                     self.DAYS = int(self.l)
                     self.Text1.insert(INSERT, "days has been inputed""\n")
@@ -211,7 +225,7 @@ class HOTEL_MANGMENT_checkin:
             if self.var1.get()==1 and self.var2.get()==0 and self.var3.get()==0 and self.var4.get()==0 and self.var5.get()==1 and self.var6.get()==0:
                 self.ch=1
                 self.p=2
-                print(self.ch,self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -221,7 +235,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 1 and self.var2.get() == 0 and self.var3.get() == 0 and self.var4.get() == 0 and self.var5.get() == 0 and self.var6.get() == 1:
                 self.ch = 1
                 self.p = 1
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -229,7 +243,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 1 and self.var3.get() == 0 and self.var4.get() == 0 and self.var5.get() == 0 and self.var6.get() == 1:
                 self.ch = 2
                 self.p = 1
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -237,7 +251,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 1 and self.var3.get() == 0 and self.var4.get() == 0 and self.var5.get() == 1 and self.var6.get() ==0 :
                 self.ch = 2
                 self.p = 2
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -245,7 +259,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 0 and self.var3.get() == 1 and self.var4.get() == 0 and self.var5.get() == 0 and self.var6.get() == 1:
                 self.ch = 3
                 self.p = 1
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -253,7 +267,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 0 and self.var3.get() == 1 and self.var4.get() == 0 and self.var5.get() == 1 and self.var6.get() == 0:
                 self.ch = 3
                 self.p = 2
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -262,7 +276,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 0 and self.var3.get() == 0 and self.var4.get() == 1 and self.var5.get() == 0 and self.var6.get() == 1:
                 self.ch = 4
                 self.p = 1
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
@@ -270,7 +284,7 @@ class HOTEL_MANGMENT_checkin:
             elif self.var1.get() == 0 and self.var2.get() == 0 and self.var3.get() == 0 and self.var4.get() == 1 and self.var5.get() == 1 and self.var6.get() == 0:
                 self.ch = 4
                 self.p = 2
-                print(self.ch, self.p)
+
                 enter(self)
                 tor(self)
                 payment_option(self)
