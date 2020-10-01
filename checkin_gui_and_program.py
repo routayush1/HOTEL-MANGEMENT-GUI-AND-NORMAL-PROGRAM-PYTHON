@@ -745,7 +745,7 @@ class HOTEL_MANGMENT_checkin:
 
 
 if __name__ == '__main__':
-    hotel=HOTEL_MANAGMENT_checkin()
+    hotel=HOTEL_MANGMENT_checkin()
 
 
 
