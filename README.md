@@ -1,4 +1,4 @@
-# HOTEL-MANGEMENT-GUI-AND-NORMAL-PROGRAM-PYTHON-
+# HOTEL-MANGEMENT-PROGRAM(PYTHON & GUI) 
 I have tried to computerize the HOTEL-MANGEMENT system through this project.
 This project gives information regarding the check-in, check-out and booking facilities of the customer.
 The project is written in Python 3 that uses OOPS concept i.e based on object and classes.
